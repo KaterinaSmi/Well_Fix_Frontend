@@ -6,10 +6,11 @@ import {
     ListItemText,
     ListItemButton,
     styled,
-    Link,
+    
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { menuItems } from './Header';
+import PropTypes from 'prop-types';
 
 export const DrawerContainer = ({ activeTab, setActiveTab }) => {
     const [openDrawer, setOpenDrawer] = React.useState(false);
@@ -64,4 +65,8 @@ export const DrawerContainer = ({ activeTab, setActiveTab }) => {
             </IconButton>
         </>
     );
+};
+DrawerContainer.propTypes = {
+    activeTab: PropTypes.number.isRequired, // activeTab should be a number and is required
+    setActiveTab: PropTypes.func.isRequired, // setActiveTab should be a function and is required
 };

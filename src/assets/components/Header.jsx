@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import {AppBar, Typography, Tabs, Tab, Button, Toolbar, useTheme, useMediaQuery} from '@mui/material'
+import  { useState } from 'react'
+import {AppBar, Typography, Tabs, Tab, Toolbar, useTheme, useMediaQuery} from '@mui/material'
 import {DrawerContainer} from './DrawerContainer';
 import { NavbarWrapper } from '../styles/Styles.modules';
-import { Link } from 'react-router-dom';
+
 
 export const menuItems = [
     { name: 'Etusivu', link: '#video' },
