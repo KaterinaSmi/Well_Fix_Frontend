@@ -12,7 +12,8 @@
   "dependencies": {
     "@mui/icons-material": "^6.4.6",
     "@mui/material": "^6.4.6",
-    "@mui/styled-engine": "^5.16.14",
+    "@mui/styled-engine": "^6.4.6",
+    "@mui/system": "^6.4.6",
     "axios": "^1.7.9",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
