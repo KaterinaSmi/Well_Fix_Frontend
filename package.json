@@ -21,19 +21,19 @@
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^7.1.5",
     "styled-components": "5.3.11"
   },
- "devDependencies": {
-  "@types/react": "^19.0.0",  
-  "@types/react-dom": "^19.0.4",
-  "@vitejs/plugin-react": "^4.3.4",
-  "eslint": "^9.19.0",
-  "eslint-plugin-react": "^7.37.4",
-  "eslint-plugin-react-hooks": "^5.0.0",
-  "eslint-plugin-react-refresh": "^0.4.18",
-  "globals": "^15.14.0",
-  "vite": "^6.1.0"
-}
-
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^15.14.0",
+    "vite": "^6.1.0"
+  }
 }

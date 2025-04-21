@@ -1,18 +1,16 @@
 import React from 'react';
-import {
-    Drawer,
-    IconButton,
-    List,
-    ListItemText,
-    ListItemButton,
-    styled,
-    
-} from '@mui/material';
+// Прямые импорты вместо деструктуризации
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemButton from '@mui/material/ListItemButton';
+import { styled } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import { menuItems } from './Header';
 import PropTypes from 'prop-types';
 
-export const DrawerContainer = ({ activeTab, setActiveTab }) => {
+export const DrawerContainer = ({ activeTab = 0, setActiveTab = () => {} }) => {
     const [openDrawer, setOpenDrawer] = React.useState(false);
 
     const drawerBtn = () => {
@@ -36,11 +34,18 @@ export const DrawerContainer = ({ activeTab, setActiveTab }) => {
 
     const handleScroll = (event, link, index) => {
         event.preventDefault();
-        const targetSection = document.querySelector(link);
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-            setActiveTab(index); // Set the active tab index
-            setOpenDrawer(false); // Close the drawer
+        try {
+            const targetSection = document.querySelector(link);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+                if (typeof setActiveTab === 'function') {
+                    setActiveTab(index); // Set the active tab index
+                }
+                setOpenDrawer(false); // Close the drawer
+            }
+        } catch (error) {
+            console.error("Error in handleScroll:", error);
+            setOpenDrawer(false); // Make sure to close drawer even if error occurs
         }
     };
 
@@ -66,7 +71,8 @@ export const DrawerContainer = ({ activeTab, setActiveTab }) => {
         </>
     );
 };
+
 DrawerContainer.propTypes = {
-    activeTab: PropTypes.number.isRequired, // activeTab should be a number and is required
-    setActiveTab: PropTypes.func.isRequired, // setActiveTab should be a function and is required
+    activeTab: PropTypes.number, // Made optional with default value
+    setActiveTab: PropTypes.func, // Made optional with default value
 };
